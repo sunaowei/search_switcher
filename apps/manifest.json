@@ -1,0 +1,70 @@
+{
+  "name": "Search Switch",
+  "version": "2019.1.5",
+  "manifest_version": 2,
+  "default_locale": "zh_CN",
+  "description": "Search Switch",
+  "icons": {
+    "16": "static/img/icon-16.png",
+    "48": "static/img/icon-48.png",
+    "128": "static/img/icon-128.png",
+    "512": "static/img/icon-512.png"
+  },
+  "browser_action": {
+    "default_icon": "static/img/icon-128.png",
+    "default_title": "Search Switch",
+    "default_popup": "popup/index.html"
+  },
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "background/detect.js",
+      "static/vendor/require/require.js",
+      "background/index.js"
+    ]
+  },
+  "options_page": "options/index.html",
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "optional_permissions": [
+    "downloads",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "commands": {
+
+  },
+  "web_accessible_resources": [
+    "static/img/icon-16.png",
+    "static/img/icon-48.png",
+    "static/img/icon-128.png",
+    "options/settings.js",
+    "static/js/msg_type.js",
+    "static/js/init_search.json",
+    "static/js/utils.js",
+    "show-password/index.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file://*/*"
+      ],
+      "js": [
+        "static/vendor/require/require.js",
+        "content-script/index.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "content_security_policy": "style-src 'self' 'unsafe-inline';script-src 'self' 'unsafe-eval'; object-src 'self' ;",
+  "update_url": "https://xiaomogu.me/crx",
+  "homepage_url": "https://xiaomogu.me"
+}

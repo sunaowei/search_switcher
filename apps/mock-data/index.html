@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mock Data</title>
+        <link rel="stylesheet" href="index.css"/>
+        <script type="text/javascript" src="../static/vendor/vue/vue.js"></script>
+        <script src="../static/vendor/require/require.js"></script>
+        <script src="../static/js/mui.js"></script>
+    </head>
+
+    <body>
+        <div class="mui-container-fluid" id="pageContainer">
+            <div class="mui-row">
+                <div class="mui-col-md-4">
+                    <div class="mui-panel">
+                        JSON File
+                        <div class="mui-textfield mui-textfield--float-label">
+                            <textarea id="jsonFileTextArea" rows="28" placeholder="Paste JSON File" autofocus></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-col-md-8">
+                    <div class="mui-panel">
+                        Setting
+                        <div>
+                            <div class="mui-textfield filed wd70">
+                                <input type="text" id="pathInput" placeholder="Path">
+                            </div>
+                            <button type="submit" class="mui-btn mui-btn--raised mui-btn--primary" @click="generateMockData">
+                                Go!
+                            </button>
+                            <button type="" class="mui-btn mui-btn--raised" @click="copy">Copy</button>
+                            <pre id="container"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="colorful.regexp.js"></script>
+    </body>
+</html>

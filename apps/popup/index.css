@@ -1,0 +1,13 @@
+@import "../static/css/mui.css";
+
+html{
+    min-width: 150px;
+}
+hr{
+    margin: 0;
+    height: 1px;
+    background-color: #000000;
+}
+.mui-btn + .mui-btn{
+    margin-left: 0;
+}

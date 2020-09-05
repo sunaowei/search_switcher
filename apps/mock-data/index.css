@@ -1,0 +1,61 @@
+@import "../static/css/mui.css";
+
+.mui-col-md-4, .mui-col-md-8 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.wd80{
+    width: 80%;
+}
+
+.wd70{
+    width: 70%;
+}
+
+.mui-panel {
+    min-height: 672px;
+}
+
+.filed {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.brace {
+    color: #50525a;
+    font-weight: bold
+}
+
+.key {
+    color: #ff0700
+}
+
+.value {
+    color: #ff0000;
+    font-weight: bold
+}
+
+.string {
+    color: #0b7500
+}
+
+.number {
+    color: #f99000
+}
+
+.boolean {
+    color: #d90ee0
+}
+
+.object {
+    color: #56b6c2
+}
+
+.comma {
+    color: #393b40;
+}
+
+.colon {
+    color: #393b40;
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            background-color: #f6f7f9;
+        }
+
+        .header {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(40, 78, 204, 1);
+            color:#ffffff;
+            z-index: 999;
+            box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1),0 0 4px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            display: flex;
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+            height: 100%;
+            background: #ffffff;
+            box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.1),0px 0px 4px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .flex-column {
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .sub-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: inherit;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #5f6368;
+        }
+
+        .sub-content {
+            padding: 15px 35px;
+        }
+
+        .sub-content .head {
+            display: flex;
+            font-size: inherit;
+            font-weight: 400;
+            color: #65686d;
+        }
+        /*.sub-content .item:hover{*/
+        /*    background-color: #c4dff6;*/
+        /*}*/
+
+        .sub-content .item {
+            display: flex;
+            height: 25px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .sub-content .item .chkbox {
+            flex-grow:4
+        }
+        .sub-content .item div {
+            flex-grow: 10;
+            flex-basis: 10px;
+        }
+        .sub-content .item .more {
+            flex-grow: 2;
+            flex-basis: 10px;
+            cursor: pointer;
+        }
+
+        .sub-content .head .chkbox {
+            flex-grow: 4;
+            flex-basis: 10px;
+        }
+
+        .sub-content .head div {
+            flex-grow: 10;
+            flex-basis: 10px;
+        }
+
+        .sub-content .head .more {
+            flex-grow: 2;
+            flex-basis: 10px;
+        }
+
+        .title {
+            font-size: x-large;
+            font-weight: 700;
+            margin-left: 20px;
+        }
+        hr{
+            border: none;
+            height: 1px;
+            background-color: #e0dddd;
+        }
+    </style>
+    <body>
+        <div class="header">
+            <div>
+                <span class="title">搜索引擎切换</span>
+                <span>配置页面</span>
+            </div>
+            <div style="margin-right: 20px;">
+                当前版本号:v1.0.0
+            </div>
+        </div>
+        <div class="content">
+            <div class="flex-column">
+                <div class="sub-header">
+                    <span>默认搜索项</span>
+                </div>
+                <div class="sub-content">
+                    <div class="head">
+                        <div class="chkbox">启用</div>
+                        <div>搜索引擎</div>
+                        <div>关键字</div>
+                        <div>查询地址</div>
+                        <div class="more"></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                </div>
+                <div class="sub-header">
+                    <span>自定义搜索项</span>
+                    <button>我是按钮</button>
+                </div>
+                <div class="sub-content">
+                    <div class="head">
+                        <div class="chkbox">启用</div>
+                        <div>搜索引擎</div>
+                        <div>关键字</div>
+                        <div>查询地址</div>
+                        <div class="more"></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                    <hr>
+                    <div class="item">
+                        <div class='chkbox'><input type="checkbox"/></div>
+                        <div>baidu.com</div>
+                        <div>wd</div>
+                        <div>http://www.baidu.com/s?wd=</div>
+                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

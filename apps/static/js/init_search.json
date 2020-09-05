@@ -1,0 +1,26 @@
+{
+    "baidu.com":{
+        "name":"Baidu",
+        "searchUrl":"https://www.baidu.com/s?wd=",
+        "key_word":"wd",
+        "favico":"https://www.baidu.com/favicon.ico"
+    },
+    "google.com":{
+        "name":"Google",
+        "searchUrl":"https://www.google.com/search?q=",
+        "key_word": "q",
+        "favico":"https://www.google.com/favicon.ico"
+    },
+    "bing.com": {
+        "name":"Bing",
+        "searchUrl":"https://www.bing.com/search?q=",
+        "key_word":"q",
+        "favico":"https://www.bing.com/favicon.ico"
+    },
+    "duckduckgo.com":{
+        "name":"DuckDuckGo",
+        "searchUrl":"https://duckduckgo.com/?q=",
+        "key_word":"q",
+        "favico":"https://www.duckduckgo.com/favicon.ico"
+    }
+}
