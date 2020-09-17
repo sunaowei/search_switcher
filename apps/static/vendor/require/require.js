@@ -21,7 +21,7 @@
 //      the file to see the function definition.
 (self.Tarp = self.Tarp || {}).require = function(config) {
     "use strict";
-  
+
     function resolve(id, pwd) {
       var matches = id.match(/^((\.)?.*\/|)(.[^.]*|)(\..*|)$/);
       return (new URL(
@@ -29,7 +29,7 @@
         pwd
       )).href;
     }
-  
+
     function load(id, pwd, asyn) {
       var href, cached, request;
       // NOTE resolve href from id.
@@ -91,8 +91,7 @@
                   }
                 }
                 done();
-              }
-              else {
+              } else {
                 alert(href + " " + request.status)
                 rej(cached.e = new Error(href + " " + request.status));
               }
@@ -117,7 +116,7 @@
         throw cached.e;
       return cached;
     }
-  
+
     function evaluate(cached, parent) {
       var module;
       if (!cached.m) {
@@ -145,7 +144,7 @@
       }
       return cached.m;
     }
-  
+
     function factory(parent) {
       function requireEngine(mode, id, asyn) {
         function afterLoad(cached) {
@@ -163,21 +162,21 @@
           else
             return evaluate(cached, parent).exports;
         }
-  
+
         var pwd = (new URL(id[0] == "." ? (parent ? parent.uri : config.root) : config.paths[0], config.root)).href;
         return asyn ?
           new Promise(function(res, rej) { load(id, pwd, asyn).p.then(afterLoad).then(res, rej); }):
           afterLoad(load(id, pwd, asyn));
       }
-  
+
       var require = requireEngine.bind(undefined, 0);
       require.resolve = requireEngine.bind(require, 1);
       require.resolve.paths = requireEngine.bind(require.resolve, 2);
       return require;
     }
-  
+
     var cache, require;
-  
+
     // NOTE Web-worker will use the origin, since location.href is not available.
     cache = Object.create(null);
     config = config || new Object();

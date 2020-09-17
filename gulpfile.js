@@ -1,7 +1,3 @@
-/**
- * FeHelper Chrome Extension Builder By Gulp
- * @author zhaoxianlie
- */
 
 let gulp = require('gulp');
 
@@ -141,8 +137,8 @@ gulp.task('zip', done => {
     fs.writeFileSync(pathOfMF, JSON.stringify(manifest));
 
     // ============压缩打包================================================
-    shell.exec('cd output/ && rm -rf fehelper.zip && zip -r fehelper.zip apps/ > /dev/null && cd ../');
-    let size = fs.statSync('output/fehelper.zip').size;
+    shell.exec('cd output/ && rm -rf search_switcher.zip && zip -r search_switcher.zip apps/ > /dev/null && cd ../');
+    let size = fs.statSync('output/search_switcher.zip').size;
     size = pretty(size);
 
     console.log('\n\n================================================================================');

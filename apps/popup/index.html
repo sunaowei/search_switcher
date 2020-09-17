@@ -1,64 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>搜索引擎切换</title>
-        <link rel="stylesheet" href="index.css"/>
-        <script type="text/javascript" src="../static/vendor/vue/vue.js"></script>
-        <script src="../static/vendor/require/require.js"></script>
-        <script src="../static/js/utils.js"></script>
-        <script src="../content-script/index.js"></script>
-    </head>
-    <style>
-        body {
-            font-size: 14px;
-        }
-
-        ul {
-            list-style-type: none
-        }
-
-        li {
-            margin-left: -30px;
-            margin-top: 10px;
-        }
-
-        .item {
-            font-size: 14px;
-        }
-
-        .item-div {
-            display: flex;
-            justify-content: start;
-            padding: 10px 0;
-            cursor: pointer;
-            -webkit-transition: all 0.4s ease;
-            border-bottom: 1px dashed #e5e5e5;
-        }
-        .item-div svg {
-            margin: 0 10px;
-        }
-        .item-div img {
-            padding: 0 10px;
-        }
-    </style>
-    <body>
-        <div id="pageContainer">
-            <div style="margin: 5px 10px;">
-                <b>搜索引擎切换</b>
-            </div>
-            <hr>
-
-            <div style="display: flex;flex-direction:column;justify-content:start">
-                <div :id="name" v-for="(value,name) in searchList" class="item-div" @click="runHelper(name,0)">
-                    <img :src="value.favico" width="20px" height="20px">
-                    <span class="item">{{name}}</span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script type="text/javascript" src="../static/vendor/vue/vue.js"></script>
+    <script src="../static/vendor/require/require.js"></script>
+<!--    <script src="../content-script/index.js"></script>-->
+</head>
+<body style="width: 180px">
+    <div id="page">
+        <div class="mdui-list mdui-list-dense">
+            <div v-for="item in linkData" >
+                <div class="mdui-divider-inset mdui-m-y-0 mdui-m-l-0"></div>
+                <div class="mdui-list-item mdui-ripple" @click="changeSearch(item)">
+                    <div class="list-item-icon"><img :src=item.favicon  :alt="item.name"/></div>
+                    <div class="mdui-list-item-content mdui-m-l-2">{{item.name}}</div>
                 </div>
             </div>
-            <div style="display: flex;justify-content: flex-end;">
-                <div style="padding: 7px;cursor: pointer;" @click="runHelper('OPTIONS',1)">设置</div>
-            </div>
         </div>
-        <script type="text/javascript" src="index.js"></script>
-    </body>
+    </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+
 </html>

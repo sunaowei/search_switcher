@@ -1,265 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            background-color: #f6f7f9;
-        }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script type="text/javascript" src="../static/vendor/vue/vue.js"></script>
+    <script src="../static/vendor/require/require.js"></script>
+    <!-- <script src="../static/js/utils.js"></script> -->
+<!--    <script src="../content-script/index.js"></script>-->
+</head>
 
-        .header {
-            height: 50px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(40, 78, 204, 1);
-            color:#ffffff;
-            z-index: 999;
-            box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1),0 0 4px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .content {
-            display: flex;
-            width: 60%;
-            margin-left: 20%;
-            margin-right: 20%;
-            height: 100%;
-            background: #ffffff;
-            box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.1),0px 0px 4px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .flex-column {
-            flex-direction: column;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .sub-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-size: inherit;
-            font-weight: 500;
-            margin-bottom: 10px;
-            color: #5f6368;
-        }
-
-        .sub-content {
-            padding: 15px 35px;
-        }
-
-        .sub-content .head {
-            display: flex;
-            font-size: inherit;
-            font-weight: 400;
-            color: #65686d;
-        }
-        /*.sub-content .item:hover{*/
-        /*    background-color: #c4dff6;*/
-        /*}*/
-
-        .sub-content .item {
-            display: flex;
-            height: 25px;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .sub-content .item .chkbox {
-            flex-grow:4
-        }
-        .sub-content .item div {
-            flex-grow: 10;
-            flex-basis: 10px;
-        }
-        .sub-content .item .more {
-            flex-grow: 2;
-            flex-basis: 10px;
-            cursor: pointer;
-        }
-
-        .sub-content .head .chkbox {
-            flex-grow: 4;
-            flex-basis: 10px;
-        }
-
-        .sub-content .head div {
-            flex-grow: 10;
-            flex-basis: 10px;
-        }
-
-        .sub-content .head .more {
-            flex-grow: 2;
-            flex-basis: 10px;
-        }
-
-        .title {
-            font-size: x-large;
-            font-weight: 700;
-            margin-left: 20px;
-        }
-        hr{
-            border: none;
-            height: 1px;
-            background-color: #e0dddd;
-        }
-    </style>
-    <body>
-        <div class="header">
-            <div>
-                <span class="title">搜索引擎切换</span>
-                <span>配置页面</span>
-            </div>
-            <div style="margin-right: 20px;">
-                当前版本号:v1.0.0
+<body class="mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-theme-layout-auto">
+    <div id="pageContainer">
+        <div class="mdui-appbar">
+            <div class="mdui-toolbar mdui-color-theme">
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon"></a>
+                <a href="javascript:;" class="mdui-typo-headline">快速搜索切换</a>
+                <a href="javascript:;" class="mdui-typo-title"></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <a href="javascript:;" class="mdui-btn">v1.0.0</a>
             </div>
         </div>
-        <div class="content">
-            <div class="flex-column">
-                <div class="sub-header">
-                    <span>默认搜索项</span>
-                </div>
-                <div class="sub-content">
-                    <div class="head">
-                        <div class="chkbox">启用</div>
-                        <div>搜索引擎</div>
-                        <div>关键字</div>
-                        <div>查询地址</div>
-                        <div class="more"></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
+
+        <div class="mdui-container">
+            <div class="mdui-table-fluid">
+                <div class="mdui-container-fluid mdui-p-l-3 mdui-p-r-3 mdui-p-b-1  mdui-p-t-4">
+                    <div class="mdui-row mdui-row-gapless">
+                        <div class="mdui-col-xs-4 mdui-typo-title mdui-p-l-4">
+                            设置
+                        </div>
+                        <div class="mdui-col-xs-7"></div>
+                        <div class="mdui-col-xs-1">
+                            <button class="mdui-btn mdui-btn-raised" @click="add">添加</button>
+                        </div>
                     </div>
                 </div>
-                <div class="sub-header">
-                    <span>自定义搜索项</span>
-                    <button>我是按钮</button>
-                </div>
-                <div class="sub-content">
-                    <div class="head">
-                        <div class="chkbox">启用</div>
-                        <div>搜索引擎</div>
-                        <div>关键字</div>
-                        <div>查询地址</div>
-                        <div class="more"></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                    <hr>
-                    <div class="item">
-                        <div class='chkbox'><input type="checkbox"/></div>
-                        <div>baidu.com</div>
-                        <div>wd</div>
-                        <div>http://www.baidu.com/s?wd=</div>
-                        <div class="more"><svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">    <path d="M 18.414062 2 C 18.158188 2 17.902031 2.0974687 17.707031 2.2929688 L 16 4 L 20 8 L 21.707031 6.2929688 C 22.098031 5.9019687 22.098031 5.2689063 21.707031 4.8789062 L 19.121094 2.2929688 C 18.925594 2.0974687 18.669937 2 18.414062 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"/></svg></div>
-                    </div>
-                </div>
+                <!--            <div class="mdui-divider"></div>-->
+                <table class="mdui-table mdui-p-l-4 mdui-p-r-4 mdui-p-t-3">
+                    <thead>
+                    <tr>
+                        <th style="width: 20%">搜索引擎名称</th>
+                        <th style="width: 40%">查询地址</th>
+                        <th style="width: 20%">开启</th>
+                        <th style="width: 20%"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="item in searchList">
+                            <td>{{item.name}}</td>
+                            <td>{{item.link}}</td>
+                            <td>
+                                <label class="mdui-switch">
+                                    <input type="checkbox" v-model="item.enableStatus" @change="changeStatus(item)" checked/>
+                                    <i class="mdui-switch-icon"></i>
+                                </label>
+                            </td>
+                            <td>
+                                <button class="mdui-btn"  @click="edit(item)">编辑</button>
+                                <button class="mdui-btn mdui-text-color-red mdui-btn-bold"  @click="deleteData(item)">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </body>
+
+        <div class="mdui-dialog" id="editDialog" @opened.mdui.dialog="openedDialog">
+            <div class="mdui-dialog-title">{{dialogTitle}}</div>
+            <div class="mdui-dialog-content">
+                <div class="mdui-textfield mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">搜索名称</label>
+                    <input class="mdui-textfield-input" v-model="searchData.name" type="text"/>
+                </div>
+                <div class="mdui-textfield mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">网址</label>
+                    <input class="mdui-textfield-input" v-model="searchData.link" type="text"/>
+                    <div class="mdui-textfield-helper">关键字使用%s替换</div>
+                </div>
+                <div class="mdui-textfield mdui-textfield-floating-label">
+                    <label class="mdui-textfield-label">favicon地址</label>
+                    <input class="mdui-textfield-input" v-model="searchData.faviconUrl" type="text"/>
+                    <div class="mdui-textfield-helper">选填</div>
+                </div>
+            </div>
+            <div class="mdui-dialog-actions">
+                <button class="mdui-btn mdui-ripple" mdui-dialog-close>取消</button>
+                <button class="mdui-btn mdui-ripple" mdui-dialog-confirm @click="save">确定</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="../static/js/mdui.min.js"></script>
 </html>
