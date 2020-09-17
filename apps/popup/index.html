@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script type="text/javascript" src="../static/vendor/vue/vue.js"></script>
+    <script src="../static/vendor/require/require.js"></script>
+<!--    <script src="../content-script/index.js"></script>-->
+</head>
+<body style="width: 180px">
+    <div id="page">
+        <div class="mdui-list mdui-list-dense">
+            <div v-for="item in linkData" >
+                <div class="mdui-divider-inset mdui-m-y-0 mdui-m-l-0"></div>
+                <div class="mdui-list-item mdui-ripple" @click="changeSearch(item)">
+                    <div class="list-item-icon"><img :src=item.favicon  :alt="item.name"/></div>
+                    <div class="mdui-list-item-content mdui-m-l-2">{{item.name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+
+</html>

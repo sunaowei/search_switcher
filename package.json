@@ -1,0 +1,38 @@
+{
+    "name": "search_switcher",
+    "version": "1.0.0",
+    "description": "快速切换搜索引擎",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+      "gulp": "^4.0.2",
+      "gulp-callback": "0.0.3",
+      "gulp-clean": "^0.4.0",
+      "gulp-copy": "^4.0.1",
+      "gulp-htmlmin": "^5.0.1",
+      "gulp-jsonminify": "^1.1.0",
+      "gulp-uglify-es": "^2.0.0",
+      "gulp-uglifycss": "^1.1.0",
+      "gulp-watch-path": "^0.1.0",
+      "gulp-zip": "^5.0.1",
+      "pretty-bytes": "^5.3.0",
+      "run-sequence": "^2.2.1",
+      "shelljs": "^0.8.4"
+    },
+    "scripts": {
+      "watch": "gulp watch",
+      "build": "gulp"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sunaowei/search_switcher.git"
+    },
+    "keywords": [
+      "搜索引擎切换",
+      "搜索引擎",
+      "搜索",
+      "搜索切换",
+      "搜索关键字"
+    ]
+  }
+  
