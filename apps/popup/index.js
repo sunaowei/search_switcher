@@ -66,11 +66,13 @@ new Vue({
          */
         getKeywordKey: function () {
             let keywordKey = null;
-            new URL(this.currentLinkData.link).searchParams.forEach((value, key) => {
-                if (value === "%s") {
-                    keywordKey = key;
-                }
-            })
+            if (this.currentLinkData.link){
+                new URL(this.currentLinkData.link).searchParams.forEach((value, key) => {
+                    if (value === "%s") {
+                        keywordKey = key;
+                    }
+                })
+            }
             return keywordKey;
         },
 

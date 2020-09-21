@@ -18,7 +18,7 @@
       "persistent": true,
       "scripts": [
         "static/vendor/require/require.js",
-        "storeage/index.js"
+        "storage/index.js"
       ]
     },
     "options_page": "options/index.html",

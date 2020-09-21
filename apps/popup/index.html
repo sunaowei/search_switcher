@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="index.css"/>
     <script type="text/javascript" src="../static/vendor/vue/vue.js"></script>
     <script src="../static/vendor/require/require.js"></script>
-<!--    <script src="../content-script/index.js"></script>-->
 </head>
 <body style="width: 180px">
     <div id="page">
+        <div class="mdui-m-a-1 mdui-container-fluid">
+            <div class="mdui-row">
+                <span class="mdui-text-color-black-secondary title">搜索引擎切换</span>
+            </div>
+
+
+        </div>
         <div class="mdui-list mdui-list-dense">
-            <div v-for="item in linkData" >
+            <div :class="'item item-' + index" v-for="(item,index) in linkData" >
                 <div class="mdui-divider-inset mdui-m-y-0 mdui-m-l-0"></div>
                 <div class="mdui-list-item mdui-ripple" @click="changeSearch(item)">
                     <div class="list-item-icon"><img :src=item.favicon  :alt="item.name"/></div>
