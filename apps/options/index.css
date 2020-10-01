@@ -1,1 +1,18 @@
 @import "../static/css/mdui.min.css";
+
+.icon {
+    width: 24px;
+}
+.icon-btn {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffffff00;
+}
+.icon-btn:hover{
+    border: none;
+    background-color: #ffffff00;
+}
+.mgr-6{
+    margin-right: 6%;
+}

@@ -3,7 +3,10 @@ new Vue({
     data: {
         dialogTitle: "编辑",
         searchList: [],
-        searchData: {},
+        searchData: {
+            name:" ",
+            link:" "
+        },
         dialog: null
     },
     created: function () {
@@ -11,6 +14,11 @@ new Vue({
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             if (request.message === "load_all_data_complete") {
                 _this.searchList = request.payload;
+                if (request.payload && request.payload.length > 0){
+                    request.payload.forEach(item=>{
+                        _this.buildFaviconUrl(item)
+                    });
+                }
             }
         })
         chrome.runtime.sendMessage({message: "load_all_data"});
@@ -23,6 +31,7 @@ new Vue({
         },
         edit: function (item) {
             let _this = this;
+            this.dialogTitle = "修改"
             chrome.runtime.sendMessage({message: "get_data", payload: item.id}, null, function (data) {
                 _this.searchData = data;
                 new mdui.Dialog("#editDialog").open();
@@ -58,6 +67,18 @@ new Vue({
         },
         changeStatus: function (item) {
             chrome.runtime.sendMessage({message: "update_data", payload: [item]}, null);
+        },
+        buildFaviconUrl:function (item){
+            try {
+                let url = new URL(item.link);
+                item.faviconUrl = url.protocol + "//" + url.host + "/favicon.ico";
+            } catch (e) {
+                item.faviconUrl = "/static/img/icon-48.png"
+                console.error(e);
+            }
+        },
+        githubClick:function (){
+            window.open("https://github.com/sunaowei/search_switcher",'_blank');
         }
     }
 });

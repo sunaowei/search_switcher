@@ -14,10 +14,8 @@ new Vue({
         }).then(() => {
             chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 if (request.message === "load_all_data_complete") {
-                    request.payload.forEach(item => {
-                        if (!item.favicon) {
-                            item.favicon = "/static/img/icon-48.png"
-                        }
+                    request.payload.filter(o=>o.enableStatus).forEach(item => {
+                        _this.buildFaviconUrl(item)
                         item.hostname = _this.getHostName(item.link)
                         if (item.hostname === _this.getHostName(_this.currentTabUrl)) {
                             _this.currentLinkData = item;
@@ -104,6 +102,19 @@ new Vue({
                     reject(e)
                 }
             }))
+        },
+        buildFaviconUrl:function (item){
+            try {
+                let url = new URL(item.link);
+                item.faviconUrl = url.protocol + "//" + url.host + "/favicon.ico";
+            } catch (e) {
+                item.faviconUrl = "/static/img/icon-48.png"
+                console.error(e);
+            }
+        },
+        optionsClick:function (){
+            chrome.runtime.openOptionsPage();
+            window.close()
         }
     }
 })

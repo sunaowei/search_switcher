@@ -1,8 +1,8 @@
 {
-    "name": "搜索引擎切换",
+    "name": "快速切换搜索",
     "version": "2019.1.5",
     "manifest_version": 2,
-    "description": "快速切换搜索引擎",
+    "description": "快速切换搜索-让你在多个搜索引擎间反复横跳",
     "icons": {
       "16": "static/img/icon-16.png",
       "48": "static/img/icon-48.png",
@@ -11,7 +11,7 @@
     },
     "browser_action": {
       "default_icon": "static/img/icon-128.png",
-      "default_title": "搜索引擎切换",
+      "default_title": "快速切换搜索",
       "default_popup": "popup/index.html"
     },
     "background": {

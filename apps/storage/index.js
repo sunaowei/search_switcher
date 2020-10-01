@@ -152,7 +152,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                     message: "get_data_complete",
                     payload: res
                 })
-                console.log(new Date().getTime())
                 sendResponse(res)
             })
         })
@@ -186,22 +185,27 @@ chrome.runtime.onInstalled.addListener(function () {
                 {
                     "name": "Baidu",
                     "link": "https://www.baidu.com/s?ie=UTF-8&wd=%s",
-                    "favicon": "https://www.baidu.com/favicon.ico"
+                    "enableStatus":true
                 },
                 {
                     "name": "Google",
                     "link": "https://www.google.com/search?q=%s",
-                    "favicon": "https://www.google.com/favicon.ico"
+                    "enableStatus":true
                 },
                 {
                     "name": "Bing",
                     "link": "https://cn.bing.com/search?q=%s",
-                    "favicon": "https://cn.bing.com//favicon.ico",
+                    "enableStatus":true
                 },
                 {
                     "name": "DuckDuckGo",
                     "link": "https://duckduckgo.com/?q=%s",
-                    "favicon": "https://duckduckgo.com/favicon.ico"
+                    "enableStatus":true
+                },
+                {
+                    "name": "JD.com",
+                    "link": "https://search.jd.com/Search?keyword=%s&enc=utf-8",
+                    "enableStatus":true
                 }
             ]
         )
